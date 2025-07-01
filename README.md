@@ -145,7 +145,14 @@ trusted-host =
     files.pythonhosted.org
 cert = /home/you/corp-proxy.crt
 ```
-
+When using `pip`, you can also use the `--cert` argument: 
+```bash
+pip --cert <path/to/corp-proxy.crt>.crt install <package list>
+``` 
+or export a `PIP_CERT` env var pointing to your corp-proxy.crt or ca-bundle: (REHL example) 
+```bash
+export PIP_CERT=/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
+```
 ### Java (keytool)
 
 ```bash
